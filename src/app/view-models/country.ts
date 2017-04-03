@@ -1,0 +1,6 @@
+
+export interface ICountry {
+  id: number;
+  name: string;
+  epiIndex: number;
+}

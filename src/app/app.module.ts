@@ -18,6 +18,8 @@ import { UserApi } from '../fw/users/user-api';
 import { UserService } from './services/user.service';
 import { AuthGuard } from './services/auth-guard.service';
 
+import { AppDataService } from './services/app-data.service';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -39,6 +41,7 @@ import { AuthGuard } from './services/auth-guard.service';
     AuthGuard,
     UserService,
     { provide: UserApi, useExisting: UserService }, // DI will use UserService when it sees UserApi
+    AppDataService,
   ],
   bootstrap: [AppComponent],
 
