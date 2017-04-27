@@ -13,6 +13,7 @@ import { CountryDetailComponent } from './country-detail/country-detail.componen
 import { CountryListComponent } from './country-list/country-list.component';
 import { CountryMaintComponent } from './country-maint/country-maint.component';
 import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
+import { CountryPanelComponent } from './panels/country-panel/country-panel.component';
 
 import { UserApi } from '../fw/users/user-api';
 import { UserService } from './services/user.service';
@@ -28,7 +29,8 @@ import { AppDataService } from './services/app-data.service';
     CountryDetailComponent,
     CountryListComponent,
     CountryMaintComponent,
-    AuthenticatedUserComponent
+    AuthenticatedUserComponent,
+    CountryPanelComponent,
   ],
   imports: [
     BrowserModule,

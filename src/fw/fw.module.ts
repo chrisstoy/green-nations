@@ -26,6 +26,8 @@ import { RegisterUserComponent } from './users/register-user/register-user.compo
 import { DynamicFormComponent } from './dynamic-forms/dynamic-form/dynamic-form.component';
 import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-field.component';
 
+import { PanelComponent } from './panels/panel/panel.component';
+
 @NgModule({
   imports: [
     CommonModule,
@@ -48,10 +50,12 @@ import { DynamicFieldComponent } from './dynamic-forms/dynamic-field/dynamic-fie
     RegisterUserComponent,
     DynamicFormComponent,
     DynamicFieldComponent,
+    PanelComponent,
   ],
   exports: [
     FrameworkBodyComponent,
     DynamicFormComponent,
+    PanelComponent,
   ],
   providers: [
     FrameworkConfigService,
