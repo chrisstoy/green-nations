@@ -15,8 +15,8 @@ export class DynamicFormComponent implements OnChanges, OnInit {
   @Input() vmDefinition: Array<IFieldDefinition>;
   @Input() operation: string;
   @Input() errorMessage: string;
-  @Input() update: EventEmitter<any> = new EventEmitter();
-  @Input() create: EventEmitter<any> = new EventEmitter();
+  @Output() update: EventEmitter<any> = new EventEmitter();
+  @Output() create: EventEmitter<any> = new EventEmitter();
 
   form: FormGroup;
   status: string;
@@ -64,7 +64,22 @@ export class DynamicFormComponent implements OnChanges, OnInit {
   }
 
   onCreate() {
-
+    this.submitted = true;
+    if (this.form.valid) {
+      this.status = 'waiting';
+      this.create.emit(this.form.value);
+    }
   }
 
+  onEdit() {
+    this.router.navigate(['../', 'edit'], { relativeTo: this.route });
+  }
+
+  onSave() {
+    this.submitted = true;
+    if (this.form.valid) {
+      this.status = 'waiting';
+      this.update.emit(this.form.value);
+    }
+  }
 }

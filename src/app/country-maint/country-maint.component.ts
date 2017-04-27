@@ -25,6 +25,11 @@ export class CountryMaintComponent implements OnInit {
 
   cancelDelete() {
     this.isDeleting = false;
+    this.deleteId = null;
+  }
+
+  createCountry() {
+    this.router.navigate(['/authenticated/country-detail', 0, 'create']);
   }
 
   deleteCountry(id: number) {

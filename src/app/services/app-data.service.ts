@@ -47,8 +47,9 @@ export class AppDataService {
     return Observable.of(country);
   }
 
-  updateCountr(updatedCountr: ICountry): Observable<any> {
-
-    return Observable.of({});
+  updateCountry(updatedCountry: ICountry): Observable<any> {
+    let country = this.countries.find(c => c.id == updatedCountry.id);
+    country = Object.assign(country, updatedCountry);
+    return Observable.of(country);
   }
 }

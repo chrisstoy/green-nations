@@ -46,15 +46,6 @@ export class CountryDetailComponent implements OnInit {
     private route: ActivatedRoute,
   ) { }
 
-  createCountry(country: ICountry) {
-    country.id = 0;
-    this.errorMessage = null;
-    this.dataService.createCountry(country).subscribe(
-      c => this.router.navigate(['/authenticated/country-maint']),
-      err => this.errorMessage = 'Error creating country'
-    );
-  }
-
   ngOnInit() {
     this.operation = this.route.snapshot.params['operation'];
 
@@ -66,8 +57,21 @@ export class CountryDetailComponent implements OnInit {
     }
   }
 
-  updateCountry(country: ICountry) {
+  public createCountry(country: ICountry) {
+    country.id = 0;
+    this.errorMessage = null;
+    this.dataService.createCountry(country).subscribe(
+      c => this.router.navigate(['/authenticated/country-maint']),
+      err => this.errorMessage = 'Error creating country'
+    );
+  }
 
+  public updateCountry(country: ICountry) {
+    this.errorMessage = null;
+    this.dataService.updateCountry(country).subscribe(
+      c => this.router.navigate(['/authenticated/country-maint']),
+      err => this.errorMessage = 'Error updating country'
+    );
   }
 
 }
