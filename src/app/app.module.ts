@@ -14,12 +14,13 @@ import { CountryListComponent } from './country-list/country-list.component';
 import { CountryMaintComponent } from './country-maint/country-maint.component';
 import { AuthenticatedUserComponent } from './authenticated-user/authenticated-user.component';
 import { CountryPanelComponent } from './panels/country-panel/country-panel.component';
+import { ImagePanelComponent } from './panels/image-panel/image-panel.component';
 
 import { UserApi } from '../fw/users/user-api';
 import { UserService } from './services/user.service';
 import { AuthGuard } from './services/auth-guard.service';
-
 import { AppDataService } from './services/app-data.service';
+
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { AppDataService } from './services/app-data.service';
     CountryMaintComponent,
     AuthenticatedUserComponent,
     CountryPanelComponent,
+    ImagePanelComponent,
   ],
   imports: [
     BrowserModule,
